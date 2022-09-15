@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Button} from 'react-native-paper';
 import Icon from '../assets/icone/📍 Leading Icon l Use High Emphasis-1.svg';
 import Book from '../assets/icone/subscriptions-illustration-image.svg';
+import {getResHeight, getResWidth} from '../../Responsive';
 
 export default class SecondView extends Component {
   render() {
@@ -10,8 +11,8 @@ export default class SecondView extends Component {
       <View style={{backgroundColor: '#DCB223', borderRadius: 15}}>
         <View
           style={{
-            height: 250,
-            width: 360,
+            height: getResHeight(220),
+            width: getResWidth(275),
             flexDirection: 'row',
           }}>
           {/* //Left Container */}
@@ -24,7 +25,7 @@ export default class SecondView extends Component {
             <View
               style={{
                 borderRadius: 100,
-                width: 110,
+                width: getResWidth(85),
                 backgroundColor: 'white',
               }}>
               <Book />
@@ -57,11 +58,11 @@ export default class SecondView extends Component {
               <View
                 style={{
                   backgroundColor: 'white',
-                  height: 70,
+                  height: getResHeight(65),
                   justifyContent: 'flex-end',
                   paddingBottom: '8%',
                   marginLeft: '10%',
-                  width: 112,
+                  width: getResWidth(82),
                   borderRadius: 10,
                 }}>
                 <View
@@ -95,11 +96,11 @@ export default class SecondView extends Component {
                   backgroundColor: 'white',
                   marginTop: 8,
                   marginLeft: 35,
-                  height: 70,
+                  height: getResHeight(60),
                   justifyContent: 'flex-end',
                   paddingBottom: '8%',
                   borderRadius: 10,
-                  width: 112,
+                  width: getResWidth(82),
                 }}>
                 <View
                   style={{
@@ -137,8 +138,8 @@ export default class SecondView extends Component {
           <View
             style={{
               position: 'absolute',
-              width: 130,
-              height: 75,
+              width: getResWidth(100),
+              height: getResHeight(70),
               right: 30,
               top: -10,
               borderRadius: 10,
@@ -177,10 +178,10 @@ export default class SecondView extends Component {
                 height: 35,
                 flexDirection: 'row',
               }}>
-              <View style={{width: 25}}>
+              <View style={{width: getResWidth(20)}}>
                 <Icon />
               </View>
-              <View style={{width: 25}}>
+              <View style={{width: getResWidth(20)}}>
                 <Icon />
               </View>
               <View>

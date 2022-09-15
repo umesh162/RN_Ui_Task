@@ -2,6 +2,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {TabBg} from './TabBg';
+import {getResWidth} from '../../Responsive';
 
 export default function HoverButton() {
   return (
@@ -17,7 +18,7 @@ export default function HoverButton() {
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
-    width: 75,
+    width: getResWidth(65),
     alignItems: 'center',
   },
   background: {

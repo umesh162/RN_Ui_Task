@@ -14,6 +14,7 @@ import HomeIcon from './src/assets/icone/Group 910.svg';
 import CustomersIcon from './src/assets/icone/Group 912.svg';
 import KhataIcon from './src/assets/icone/Group 913.svg';
 import OrdersIcon from './src/assets/icone/Group 914.svg';
+import {getResHeight} from './Responsive';
 
 const BottomBar = createBottomTabNavigator();
 
@@ -29,7 +30,7 @@ const App = () => {
             fontWeight: '600',
           },
           tabBarStyle: {
-            height: 55,
+            height: getResHeight(52),
           },
         }}>
         <BottomBar.Screen

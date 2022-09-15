@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Button} from 'react-native-paper';
 import Icon from '../assets/icone/📍 Leading Icon l Use High Emphasis-1.svg';
 import Book from '../assets/icone/orders-illustration-image.svg';
+import {getResHeight, getResWidth} from '../../Responsive';
 
 export default class FirstView extends Component {
   render() {
@@ -10,8 +11,8 @@ export default class FirstView extends Component {
       <View style={{backgroundColor: '#33A1CC', borderRadius: 15}}>
         <View
           style={{
-            height: 250,
-            width: 360,
+            height: getResHeight(220),
+            width: getResWidth(275),
             flexDirection: 'row',
           }}>
           {/* //Left Container */}
@@ -30,8 +31,8 @@ export default class FirstView extends Component {
             </View>
             <View
               style={{
-                width: 130,
-                height: 40,
+                width: getResWidth(90),
+                height: getResHeight(40),
               }}>
               <Button
                 contentStyle={{
@@ -69,8 +70,8 @@ export default class FirstView extends Component {
               <View
                 style={{
                   backgroundColor: 'white',
-                  height: 70,
-                  width: 110,
+                  height: getResHeight(65),
+                  width: getResWidth(90),
                   alignItems: 'center',
                   paddingTop: '8%',
                   borderRadius: 10,
@@ -109,10 +110,10 @@ export default class FirstView extends Component {
                   height: 0,
                   flexDirection: 'row',
                 }}>
-                <View style={{width: 25}}>
+                <View style={{width: getResWidth(20)}}>
                   <Icon />
                 </View>
-                <View style={{width: 25}}>
+                <View style={{width: getResWidth(20)}}>
                   <Icon />
                 </View>
               </View>
@@ -122,8 +123,8 @@ export default class FirstView extends Component {
           <View
             style={{
               position: 'absolute',
-              width: 130,
-              height: 75,
+              width: getResWidth(105),
+              height: getResHeight(70),
               right: 30,
               top: -10,
               borderRadius: 10,
@@ -152,10 +153,10 @@ export default class FirstView extends Component {
                 height: 35,
                 flexDirection: 'row',
               }}>
-              <View style={{width: 25}}>
+              <View style={{width: getResWidth(20)}}>
                 <Icon />
               </View>
-              <View style={{width: 25}}>
+              <View style={{width: getResWidth(20)}}>
                 <Icon />
               </View>
               <View>

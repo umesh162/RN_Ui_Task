@@ -11,11 +11,13 @@ import SerachIcon from '../assets/icone/Group 922.svg';
 import Vector from 'react-native-vector-icons/AntDesign';
 import Dot from 'react-native-vector-icons/Entypo';
 import Calender from '../assets/icone/Group 911.svg';
-import Stamp from '../assets/icone/Group 900.svg';
+
 import Navigation from './Navigation';
 import FirstView from './FirstView';
 import SecondView from './SecondView';
 import ThirdView from './ThirdView';
+import {getFontSize, getResHeight, getResWidth} from '../../Responsive';
+import Card from './Card';
 
 const data = [
   {id: 11, name: <FirstView />},
@@ -37,8 +39,9 @@ export default class Home extends Component {
   render() {
     return (
       <SafeAreaView style={{}}>
-        <ScrollView style={{}}>
+        <ScrollView style={{}} showsVerticalScrollIndicator={false}>
           <Navigation />
+
           <View style={{paddingBottom: 30}}>
             <View
               style={{
@@ -55,7 +58,7 @@ export default class Home extends Component {
                   <Text
                     style={{
                       fontFamily: 'Roboto-Regular',
-                      fontSize: 20,
+                      fontSize: getFontSize(20),
                       color: '#2C3D63',
                     }}>
                     Welcome, Mypot !!
@@ -68,19 +71,7 @@ export default class Home extends Component {
                     here is your dashboard...
                   </Text>
                 </View>
-                <View
-                  style={{
-                    borderRadius: 30,
-                    borderWidth: 1,
-                    borderColor: '#ddd',
-                    backgroundColor: 'white',
-                    borderBottomWidth: 0,
-                    shadowColor: '#000000',
-                    shadowOffset: {width: 0, height: 2},
-                    shadowOpacity: 0.9,
-                    shadowRadius: 3,
-                    elevation: 10,
-                  }}>
+                <View style={style.shadow}>
                   <SerachIcon />
                 </View>
               </View>
@@ -95,7 +86,7 @@ export default class Home extends Component {
                 ItemSeparatorComponent={() => (
                   <View
                     style={{
-                      width: 20,
+                      width: getResWidth(20),
                     }}
                   />
                 )}
@@ -103,8 +94,6 @@ export default class Home extends Component {
                 showsHorizontalScrollIndicator={false}
                 renderItem={({item, index}) => <>{item.name}</>}
               />
-
-              {/* {jANUARAYYYYYYY uiiiii} */}
 
               <View
                 style={{
@@ -114,12 +103,16 @@ export default class Home extends Component {
                   justifyContent: 'space-around',
                 }}>
                 <View>
-                  <Text style={{fontSize: 13, fontFamily: 'Roboto-Regular'}}>
+                  <Text
+                    style={{
+                      fontSize: getFontSize(13),
+                      fontFamily: 'Roboto-Regular',
+                    }}>
                     January, 23 2021
                   </Text>
                   <Text
                     style={{
-                      fontSize: 22,
+                      fontSize: getFontSize(22),
                       color: '#2C3D63',
                       fontFamily: 'Roboto-Regular',
                     }}>
@@ -127,34 +120,27 @@ export default class Home extends Component {
                   </Text>
                 </View>
                 <View
-                  style={{
-                    alignItems: 'center',
-                    marginVertical: 5,
-                    justifyContent: 'center',
-                    width: 110,
-                    borderRadius: 30,
-                    borderWidth: 1,
-                    borderColor: '#ddd',
-                    backgroundColor: 'white',
-                    borderBottomWidth: 0,
-                    shadowColor: '#000000',
-                    shadowOffset: {width: 0, height: 2},
-                    shadowOpacity: 0.9,
-                    shadowRadius: 3,
-                    elevation: 10,
-                  }}>
+                  style={[
+                    {
+                      alignItems: 'center',
+                      marginVertical: 5,
+                      justifyContent: 'center',
+                      width: getResWidth(100),
+                    },
+                    style.shadow,
+                  ]}>
                   <View
                     style={{
                       flexDirection: 'row',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      width: 90,
+                      width: getResWidth(70),
                     }}>
                     <Text
                       style={{
                         marginRight: '5%',
                         fontFamily: 'Roboto-Regular',
-                        fontSize: 13,
+                        fontSize: getFontSize(13),
                         color: '#2C3D63',
                       }}>
                       TIMELINE
@@ -163,29 +149,22 @@ export default class Home extends Component {
                   </View>
                 </View>
                 <View
-                  style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    marginVertical: 5,
-                    justifyContent: 'center',
-                    width: 110,
-                    borderRadius: 30,
-                    borderWidth: 1,
-                    borderColor: '#ddd',
-                    backgroundColor: 'white',
-                    borderBottomWidth: 0,
-                    shadowColor: '#000000',
-                    shadowOffset: {width: 0, height: 2},
-                    shadowOpacity: 0.9,
-                    shadowRadius: 3,
-                    elevation: 10,
-                  }}>
+                  style={[
+                    {
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      marginVertical: 5,
+                      justifyContent: 'center',
+                      width: getResWidth(90),
+                    },
+                    style.shadow,
+                  ]}>
                   <Calender />
                   <Text
                     style={{
                       marginLeft: '5%',
                       fontFamily: 'Roboto-Regular',
-                      fontSize: 13,
+                      fontSize: getFontSize(13),
                       color: '#2C3D63',
                     }}>
                     JAN, 2021
@@ -193,7 +172,6 @@ export default class Home extends Component {
                 </View>
               </View>
             </View>
-            {/* dATE ui */}
             <FlatList
               data={date}
               horizontal
@@ -205,7 +183,7 @@ export default class Home extends Component {
               ItemSeparatorComponent={() => (
                 <View
                   style={{
-                    width: 28,
+                    width: getResWidth(21),
                   }}
                 />
               )}
@@ -236,76 +214,25 @@ export default class Home extends Component {
               )}
             />
 
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginHorizontal: '5%',
-                borderRadius: 10,
-                padding: '5%',
-                borderWidth: 1,
-                borderColor: '#ddd',
-                backgroundColor: 'white',
-                borderBottomWidth: 0,
-                shadowColor: '#000000',
-                shadowOffset: {width: 0, height: 2},
-                shadowOpacity: 0.9,
-                shadowRadius: 3,
-                elevation: 10,
-              }}>
-              <View>
-                <View>
-                  <Text
-                    style={{
-                      fontFamily: 'Roboto-Regular',
-                      fontSize: 20,
-
-                      color: '#2C3D63',
-                      marginVertical: '2%',
-                    }}>
-                    New order created
-                  </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Roboto-Regular',
-                      fontSize: 16,
-                      color: '#4C4C4C',
-                      marginVertical: '2%',
-                    }}>
-                    New Order created with Order
-                  </Text>
-                </View>
-                <View>
-                  <Text
-                    style={{
-                      fontFamily: 'Roboto-Regular',
-                      fontSize: 14,
-                      color: '#FF7742',
-                      marginBottom: '2%',
-                    }}>
-                    09:00 AM
-                  </Text>
-                </View>
-                <Vector name="arrowright" size={20} color={'#FF7742'} />
-              </View>
-              <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                <View
-                  style={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: 30,
-                    backgroundColor: '#FF804E',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                  <Stamp />
-                </View>
-              </View>
-            </View>
+            <Card />
           </View>
         </ScrollView>
       </SafeAreaView>
     );
   }
 }
+
+const style = StyleSheet.create({
+  shadow: {
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: 'white',
+    borderBottomWidth: 0,
+    shadowColor: '#000000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.9,
+    shadowRadius: 3,
+    elevation: 10,
+  },
+});

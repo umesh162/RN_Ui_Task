@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Drawer from '../assets/icone/📍 Leading Icon l Use High Emphasis.svg';
 import Heart from '../assets/icone/Group 921.svg';
 import Bell from '../assets/icone/📍Trailing icon 1.svg';
+import {getResHeight, getResWidth} from '../../Responsive';
 
 export class Navigation extends Component {
   render() {
@@ -21,8 +22,8 @@ export class Navigation extends Component {
             <View
               style={[
                 {
-                  width: 36,
-                  height: 35,
+                  width: getResWidth(28),
+                  height: getResHeight(30),
                 },
                 Styles.shadow,
               ]}>
@@ -42,13 +43,13 @@ export class Navigation extends Component {
               <Bell />
               <View
                 style={{
-                  width: 15,
-                  height: 16,
+                  width: getResWidth(12),
+                  height: getResHeight(16),
                   backgroundColor: 'red',
                   alignItems: 'center',
                   borderRadius: 12,
                   position: 'absolute',
-                  right: 0,
+                  right: -2,
                 }}>
                 <Text
                   style={{

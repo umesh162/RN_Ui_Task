@@ -5,6 +5,7 @@ import Icon from '../assets/icone/📍 Leading Icon l Use High Emphasis-1.svg';
 import Book from '../assets/icone/customers-illustration-image.svg';
 import Arrow from '../assets/icone/ic-arrow-narrow-up.svg';
 import Hill from '../assets/icone/Mini Chart.svg';
+import {getResHeight, getResWidth} from '../../Responsive';
 
 export class ThirdView extends Component {
   render() {
@@ -12,8 +13,8 @@ export class ThirdView extends Component {
       <View style={{backgroundColor: '#31CE95', borderRadius: 15}}>
         <View
           style={{
-            height: 250,
-            width: 360,
+            height: getResHeight(220),
+            width: getResWidth(275),
 
             flexDirection: 'row',
           }}>
@@ -59,11 +60,11 @@ export class ThirdView extends Component {
               <View
                 style={{
                   backgroundColor: 'white',
-                  height: 70,
+                  height: getResHeight(68),
                   marginLeft: 28,
                   justifyContent: 'flex-end',
 
-                  width: 125,
+                  width: getResWidth(95),
                   borderRadius: 10,
                 }}>
                 <View
@@ -93,11 +94,11 @@ export class ThirdView extends Component {
                   backgroundColor: 'white',
                   marginTop: 8,
 
-                  height: 70,
+                  height: getResHeight(65),
                   justifyContent: 'flex-end',
                   paddingBottom: '8%',
                   borderRadius: 10,
-                  width: 112,
+                  width: getResHeight(105),
                 }}>
                 <View
                   style={{
@@ -132,10 +133,10 @@ export class ThirdView extends Component {
                     right: -56,
                     flexDirection: 'row',
                   }}>
-                  <View style={{width: 22}}>
+                  <View style={{width: getResHeight(20)}}>
                     <Icon width={80} height={80} />
                   </View>
-                  <View style={{width: 22}}>
+                  <View style={{width: getResHeight(20)}}>
                     <Icon width={80} height={80} />
                   </View>
                   <View>
@@ -149,8 +150,8 @@ export class ThirdView extends Component {
           <View
             style={{
               position: 'absolute',
-              width: 130,
-              height: 75,
+              width: getResWidth(105),
+              height: getResHeight(70),
               right: 30,
               top: -10,
               borderRadius: 10,
@@ -182,10 +183,10 @@ export class ThirdView extends Component {
                 height: 35,
                 flexDirection: 'row',
               }}>
-              <View style={{width: 25}}>
+              <View style={{width: getResHeight(22)}}>
                 <Icon width={100} height={100} />
               </View>
-              <View style={{width: 25}}>
+              <View style={{width: getResHeight(22)}}>
                 <Icon width={100} height={100} />
               </View>
               <View>
